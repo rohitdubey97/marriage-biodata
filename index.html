@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Dubey — Marriage Biodata</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --clr-bg: #faf8f5;
+      --clr-surface: #ffffff;
+      --clr-primary: #8b2c3a;
+      --clr-primary-light: #c4636f;
+      --clr-accent: #d4a853;
+      --clr-accent-light: #f0dca4;
+      --clr-text: #2d2a26;
+      --clr-text-soft: #6b6560;
+      --clr-border: #e8e2da;
+      --clr-overlay: rgba(139, 44, 58, 0.85);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.06);
+      --shadow-lg: 0 12px 48px rgba(0,0,0,0.10);
+      --max-w: 1100px;
+      --section-py: clamp(60px, 10vw, 100px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--clr-bg);
+      color: var(--clr-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    .container { width: 90%; max-width: var(--max-w); margin: 0 auto; }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* Stagger children */
+    .stagger > * { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 245, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      border-bottom-color: var(--clr-border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+    }
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .nav__logo {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--clr-primary);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav__links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav__links a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--clr-text-soft);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s;
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--clr-accent);
+      transition: width 0.3s;
+    }
+    .nav__links a:hover { color: var(--clr-primary); }
+    .nav__links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .nav__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav__toggle span {
+      width: 24px; height: 2px;
+      background: var(--clr-text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav__toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav__toggle.active span:nth-child(2) { opacity: 0; }
+    .nav__toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav__toggle { display: flex; }
+      .nav__links {
+        position: fixed;
+        top: 64px; left: 0; right: 0;
+        background: rgba(250, 248, 245, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                    padding 0.4s;
+      }
+      .nav__links.open {
+        max-height: 400px;
+        padding: 16px 0 24px;
+        border-bottom: 1px solid var(--clr-border);
+      }
+      .nav__links li { width: 100%; text-align: center; }
+      .nav__links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, var(--clr-accent-light) 0%, transparent 70%);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(139,44,58,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner {
+      display: flex;
+      align-items: center;
+      gap: clamp(40px, 6vw, 80px);
+      position: relative;
+      z-index: 1;
+    }
+    .hero__image-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero__image-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border: 2px solid var(--clr-accent);
+      border-radius: 50%;
+      animation: pulse-ring 3s ease-in-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.04); opacity: 0.3; }
+    }
+    .hero__image {
+      width: clamp(200px, 28vw, 300px);
+      height: clamp(200px, 28vw, 300px);
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 4px solid var(--clr-surface);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero__content { max-width: 520px; }
+    .hero__label {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 12px;
+    }
+    .hero__name {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--clr-primary);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero__title {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--clr-text-soft);
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .hero__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      color: var(--clr-text-soft);
+      white-space: nowrap;
+    }
+    .tag__icon { font-size: 1rem; line-height: 1; }
+    .hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--clr-primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px rgba(139,44,58,0.25);
+    }
+    .hero__cta:hover {
+      background: #7a2533;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(139,44,58,0.35);
+    }
+
+    @media (max-width: 768px) {
+      .hero__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero__tags { justify-content: center; }
+    }
+
+    /* ===== SECTION STYLING ===== */
+    .section { padding: var(--section-py) 0; }
+    .section--alt { background: var(--clr-surface); }
+    .section__header {
+      text-align: center;
+      margin-bottom: clamp(36px, 6vw, 56px);
+    }
+    .section__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 8px;
+    }
+    .section__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--clr-primary);
+    }
+    .section__divider {
+      width: 48px; height: 3px;
+      background: var(--clr-accent);
+      border-radius: 3px;
+      margin: 16px auto 0;
+    }
+
+    /* ===== ABOUT ===== */
+    .about__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .about__image {
+      border-radius: var(--radius);
+      object-fit: cover;
+      width: 100%;
+      height: 420px;
+      box-shadow: var(--shadow-lg);
+    }
+    .about__text p {
+      font-size: 1.05rem;
+      color: var(--clr-text-soft);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .about__text p:first-child::first-letter {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      float: left;
+      line-height: 1;
+      margin-right: 8px;
+      color: var(--clr-primary);
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .about__grid { grid-template-columns: 1fr; }
+      .about__image { height: 300px; }
+    }
+
+    /* ===== DETAILS CARDS ===== */
+    .details__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .detail-card {
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .detail-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .detail-card__icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      color: #fff;
+    }
+    .detail-card__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--clr-text-soft);
+      margin-bottom: 4px;
+    }
+    .detail-card__value {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--clr-text);
+    }
+
+    /* ===== FAMILY ===== */
+    .family__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .family__text p {
+      font-size: 1.02rem;
+      color: var(--clr-text-soft);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .family__highlight {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(139,44,58,0.06), rgba(212,168,83,0.08));
+      border-left: 3px solid var(--clr-accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 20px;
+    }
+    .family__highlight-icon { font-size: 1.8rem; }
+    .family__highlight-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--clr-text-soft);
+      font-weight: 600;
+    }
+    .family__highlight-value {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--clr-primary);
+    }
+    .family__image {
+      border-radius: var(--radius);
+      object-fit: cover;
+      width: 100%;
+      height: 400px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 768px) {
+      .family__content { grid-template-columns: 1fr; }
+      .family__image { height: 280px; }
+    }
+
+    /* ===== EDUCATION & CAREER ===== */
+    .timeline {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--clr-border);
+    }
+    .timeline__item {
+      position: relative;
+      padding-left: 64px;
+      margin-bottom: 40px;
+    }
+    .timeline__item:last-child { margin-bottom: 0; }
+    .timeline__dot {
+      position: absolute;
+      left: 14px; top: 4px;
+      width: 22px; height: 22px;
+      background: var(--clr-surface);
+      border: 3px solid var(--clr-primary);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .timeline__dot::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: var(--clr-accent);
+      border-radius: 50%;
+    }
+    .timeline__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(139,44,58,0.08);
+      color: var(--clr-primary);
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .timeline__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--clr-text);
+      margin-bottom: 4px;
+    }
+    .timeline__sub {
+      font-size: 0.92rem;
+      color: var(--clr-text-soft);
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 16px; }
+      .timeline__item { padding-left: 50px; }
+      .timeline__dot { left: 6px; }
+    }
+
+    /* ===== INTERESTS ===== */
+    .interests__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .interest-card {
+      text-align: center;
+      padding: 36px 20px;
+      background: var(--clr-surface);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+    .interest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--clr-accent);
+    }
+    .interest-card__icon {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .interest-card__name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--clr-text);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .gallery__item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/5;
+    }
+    .gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gallery__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.3), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .gallery__item:hover img { transform: scale(1.06); }
+    .gallery__item:hover::after { opacity: 1; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s;
+    }
+    .lightbox.active { opacity: 1; pointer-events: all; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      border-radius: 12px;
+      box-shadow: 0 0 60px rgba(0,0,0,0.5);
+      transform: scale(0.92);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .lightbox.active img { transform: scale(1); }
+    .lightbox__close {
+      position: absolute;
+      top: 20px; right: 24px;
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: #fff;
+      font-size: 1.6rem;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox__close:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      font-size: 1.4rem;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox__nav:hover { background: rgba(255,255,255,0.25); }
+    .lightbox__prev { left: 20px; }
+    .lightbox__next { right: 20px; }
+
+    /* ===== CONTACT ===== */
+    .contact__inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .contact__text {
+      font-size: 1.1rem;
+      color: var(--clr-text-soft);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .contact__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 40px;
+      background: var(--clr-primary);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 100px;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 16px rgba(139,44,58,0.25);
+    }
+    .contact__btn:hover {
+      background: #7a2533;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(139,44,58,0.35);
+    }
+    .contact__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .contact__btn--outline {
+      background: transparent !important;
+      color: var(--clr-primary);
+      border: 2px solid var(--clr-primary);
+      box-shadow: none !important;
+    }
+    .contact__btn--outline:hover {
+      background: var(--clr-primary) !important;
+      color: #fff;
+    }
+
+    @media (max-width: 480px) {
+      .contact__buttons { flex-direction: column; }
+      .contact__btn { width: 100%; justify-content: center; }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      text-align: center;
+      padding: 32px 0;
+      color: var(--clr-text-soft);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--clr-border);
+    }
+    .footer span { color: var(--clr-primary); font-weight: 600; }
+
+    /* ===== DECORATIVE ORNAMENT ===== */
+    .ornament {
+      display: block;
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--clr-accent);
+      margin-bottom: 8px;
+      opacity: 0.7;
+    }
+
+    /* ===== SCROLL-TO-TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--clr-primary);
+      color: #fff;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s, background 0.3s;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); }
+    .scroll-top:hover { background: #7a2533; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">RD</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__image-wrap reveal-left">
+        <img src="images/7.JPEG" alt="Rohit Dubey" class="hero__image" loading="eager">
+      </div>
+      <div class="hero__content reveal-right">
+        <span class="hero__label">Marriage Biodata</span>
+        <h1 class="hero__name">Rohit Dubey</h1>
+        <p class="hero__title">Senior Software Engineer at Pine Labs</p>
+        <div class="hero__tags">
+          <span class="tag"><span class="tag__icon">📏</span> 6'0" (1.83 m)</span>
+          <span class="tag"><span class="tag__icon">🕉️</span> Hindu · Brahmin — Kanyakubj</span>
+          <span class="tag"><span class="tag__icon">🗣️</span> Hindi (MP/CG)</span>
+          <span class="tag"><span class="tag__icon">📍</span> Noida, UP</span>
+          <span class="tag"><span class="tag__icon">🎂</span> 13 March 1997</span>
+        </div>
+        <a href="#contact" class="hero__cta">Get in Touch ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">Get to Know</p>
+        <h2 class="section__title">About Me</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="about__grid">
+        <img src="images/4.jpg" alt="Rohit" class="about__image reveal-left" loading="lazy">
+        <div class="about__text reveal-right">
+          <p>A passionate and driven software engineer, I currently work as a Senior Software Engineer at Pine Labs, one of India's leading fintech companies. With a strong foundation in technology and a natural curiosity for innovation, I bring both dedication and creativity to everything I do.</p>
+          <p>Outside the world of code, I believe in maintaining a balanced lifestyle. Whether it's an intense session at the gym, a competitive game of badminton, or expressing myself through painting, I make it a point to stay active and explore diverse interests. I value family, health, and continuous growth — both personally and professionally.</p>
+          <p>I'm looking for a life partner who shares these values and is ready to build a beautiful future together, grounded in mutual respect, understanding, and love.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL DETAILS -->
+  <section class="section" id="details">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">At a Glance</p>
+        <h2 class="section__title">Personal Details</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="details__grid stagger reveal">
+        <div class="detail-card" style="--i:0">
+          <div class="detail-card__icon">📅</div>
+          <p class="detail-card__label">Date of Birth</p>
+          <p class="detail-card__value">13 March 1997</p>
+        </div>
+        <div class="detail-card" style="--i:1">
+          <div class="detail-card__icon">📏</div>
+          <p class="detail-card__label">Height</p>
+          <p class="detail-card__value">6'0" (1.83 m)</p>
+        </div>
+        <div class="detail-card" style="--i:2">
+          <div class="detail-card__icon">🕉️</div>
+          <p class="detail-card__label">Religion & Caste</p>
+          <p class="detail-card__value">Hindu · Brahmin — Kanyakubj</p>
+        </div>
+        <div class="detail-card" style="--i:3">
+          <div class="detail-card__icon">🗣️</div>
+          <p class="detail-card__label">Mother Tongue</p>
+          <p class="detail-card__value">Hindi (MP/CG)</p>
+        </div>
+        <div class="detail-card" style="--i:4">
+          <div class="detail-card__icon">📍</div>
+          <p class="detail-card__label">Location</p>
+          <p class="detail-card__value">Noida, Uttar Pradesh</p>
+        </div>
+        <div class="detail-card" style="--i:5">
+          <div class="detail-card__icon">💼</div>
+          <p class="detail-card__label">CTC</p>
+          <p class="detail-card__value">40 LPA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAMILY -->
+  <section class="section section--alt" id="family">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">My Roots</p>
+        <h2 class="section__title">Family Background</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="family__content">
+        <div class="family__text reveal-left">
+          <p>My father is a retired government employee and my mother is a homemaker. Our family is deeply rooted in values of honesty, respect, and togetherness.</p>
+          <p>I have an elder brother who works as a Bank Manager at UCO Bank. His wife also works in Bank of Baroda. They are blessed with a lovely 5-year-old daughter who fills our home with joy and laughter.</p>
+          <p>We are a close-knit, supportive family that believes in nurturing relationships and celebrating each other's successes.</p>
+          <div class="family__highlight">
+            <span class="family__highlight-icon">💰</span>
+            <div>
+              <p class="family__highlight-label">Family Income</p>
+              <p class="family__highlight-value">70 Lakhs – 1 Crore</p>
+            </div>
+          </div>
+        </div>
+        <img src="images/3.jpg" alt="Family" class="family__image reveal-right" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CAREER -->
+  <section class="section" id="career">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">My Journey</p>
+        <h2 class="section__title">Education & Career</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="timeline reveal">
+        <div class="timeline__item" style="--i:0">
+          <div class="timeline__dot"></div>
+          <span class="timeline__tag">Current</span>
+          <h3 class="timeline__title">Senior Software Engineer</h3>
+          <p class="timeline__sub">Pine Labs — Noida, India</p>
+        </div>
+        <div class="timeline__item" style="--i:1">
+          <div class="timeline__dot"></div>
+          <span class="timeline__tag">Education</span>
+          <h3 class="timeline__title">B.Tech / Engineering</h3>
+          <p class="timeline__sub">MITS, Gwalior — Madhya Pradesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section class="section section--alt" id="interests">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">Beyond Work</p>
+        <h2 class="section__title">Interests & Hobbies</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="interests__grid stagger reveal">
+        <div class="interest-card" style="--i:0">
+          <span class="interest-card__icon">🏋️</span>
+          <p class="interest-card__name">Gym & Fitness</p>
+        </div>
+        <div class="interest-card" style="--i:1">
+          <span class="interest-card__icon">🏸</span>
+          <p class="interest-card__name">Badminton</p>
+        </div>
+        <div class="interest-card" style="--i:2">
+          <span class="interest-card__icon">🎨</span>
+          <p class="interest-card__name">Painting</p>
+        </div>
+        <div class="interest-card" style="--i:3">
+          <span class="interest-card__icon">⚽</span>
+          <p class="interest-card__name">Sports</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">Moments</p>
+        <h2 class="section__title">Photo Gallery</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="gallery__grid reveal">
+        <div class="gallery__item" data-index="0">
+          <img src="images/1.jpg" alt="Photo 1" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="1">
+          <img src="images/2.jpg" alt="Photo 2" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="2">
+          <img src="images/3.jpg" alt="Photo 3" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="3">
+          <img src="images/4.jpg" alt="Photo 4" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="4">
+          <img src="images/5.jpg" alt="Photo 5" loading="lazy">
+        </div>
+        <div class="gallery__item" data-index="5">
+          <img src="images/6.jpg" alt="Photo 6" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <span class="ornament">✦</span>
+        <p class="section__label">Let's Connect</p>
+        <h2 class="section__title">Get in Touch</h2>
+        <div class="section__divider"></div>
+      </div>
+      <div class="contact__inner reveal">
+        <p class="contact__text">If you feel we could be a good match and would like to know more, please don't hesitate to reach out. I look forward to connecting with you and your family.</p>
+        <div class="contact__buttons">
+          <a href="mailto:rohitdubey.rd.87@gmail.com" class="contact__btn">✉ Send Email</a>
+          <a href="https://www.linkedin.com/in/rohitdubeysde/" target="_blank" rel="noopener" class="contact__btn">💼 LinkedIn</a>
+          <a href="tel:+919630949095" class="contact__btn contact__btn--outline">📞 Rohit Dubey</a>
+          <a href="tel:+919039485323" class="contact__btn contact__btn--outline">📞 Rakesh Kumar Dubey (Father)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>Made with ❤️ for <span>Rohit Dubey</span></p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox__nav lightbox__prev" id="lightboxPrev" aria-label="Previous">‹</button>
+    <img src="" alt="Gallery Preview" id="lightboxImg">
+    <button class="lightbox__nav lightbox__next" id="lightboxNext" aria-label="Next">›</button>
+  </div>
+
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script>
+    // ===== NAV SCROLL =====
+    const nav = document.getElementById('nav');
+    const scrollTop = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      scrollTop.classList.toggle('visible', window.scrollY > 500);
+    }, { passive: true });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== MOBILE NAV =====
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // ===== SCROLL REVEAL =====
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // ===== GALLERY LIGHTBOX =====
+    const galleryImages = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg', 'images/5.jpg', 'images/6.jpg'];
+    let currentIndex = 0;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    document.querySelectorAll('.gallery__item').forEach(item => {
+      item.addEventListener('click', () => {
+        currentIndex = parseInt(item.dataset.index);
+        lightboxImg.src = galleryImages[currentIndex];
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightboxPrev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex];
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex];
+    });
+
+    // Keyboard nav for lightbox
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex];
+      }
+      if (e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImg.src = galleryImages[currentIndex];
+      }
+    });
+  </script>
+
+</body>
+</html>
